@@ -97,13 +97,13 @@ Make sure you have installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Smart-HelpDesk.git
+git clone https://github.com/vijaya-harshini/java-helpdesk-system.git
 ```
 
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd Smart-HelpDesk
+cd SmartHelpDesk
 ```
 
 ### 3. Configure MongoDB
