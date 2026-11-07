@@ -1,0 +1,88 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.helpdesk.controller.LoginController"
+      alignment="CENTER"
+      spacing="18"
+      prefWidth="900"
+      prefHeight="600"
+      style="-fx-background-color: #f4f6fb;">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="SMART HELPDESK"
+           style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #172554;"/>
+
+    <Label text="Your IT support management system"
+           style="-fx-font-size: 14px; -fx-text-fill: #64748b;"/>
+
+    <VBox alignment="CENTER"
+          spacing="15"
+          maxWidth="380"
+          style="-fx-background-color: white; -fx-background-radius: 15;">
+
+        <padding>
+            <Insets top="30" right="35" bottom="30" left="35"/>
+        </padding>
+
+        <Label text="Welcome Back"
+               style="-fx-font-size: 23px; -fx-font-weight: bold;"/>
+
+        <Label text="Choose your login type"
+               style="-fx-text-fill: #64748b;"/>
+
+        <HBox spacing="12">
+            <Button fx:id="userButton"
+                    text="User Login"
+                    onAction="#selectUser"
+                    prefWidth="145"
+                    style="-fx-background-color: #2563eb; -fx-text-fill: white;"/>
+
+            <Button fx:id="adminButton"
+                    text="Admin Login"
+                    onAction="#selectAdmin"
+                    prefWidth="145"
+                    style="-fx-background-color: #e2e8f0; -fx-text-fill: #172554;"/>
+        </HBox>
+
+        <Label fx:id="roleLabel"
+               text="USER LOGIN"
+               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+
+        <TextField fx:id="emailField"
+                   promptText="Email address"
+                   prefHeight="42"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       prefHeight="42"/>
+
+        <Label fx:id="messageLabel"
+               text=""
+               wrapText="true"
+               style="-fx-text-fill: #dc2626;"/>
+
+        <Button text="Sign In"
+                onAction="#login"
+                maxWidth="Infinity"
+                prefHeight="43"
+                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold;"/>
+
+        <Button text="Create a new account"
+        onAction="#openRegister"
+        maxWidth="Infinity"
+        style="-fx-background-color: transparent; -fx-text-fill: #2563eb;"/>
+
+    </VBox>
+
+
+</VBox>

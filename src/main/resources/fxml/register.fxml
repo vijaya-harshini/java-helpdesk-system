@@ -1,0 +1,70 @@
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.helpdesk.controller.RegisterController"
+      alignment="CENTER"
+      spacing="15"
+      prefWidth="900"
+      prefHeight="600"
+      style="-fx-background-color: #f4f6fb;">
+
+    <padding>
+        <Insets top="35" right="40" bottom="35" left="40"/>
+    </padding>
+
+    <Label text="SMART HELPDESK"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #172554;"/>
+
+    <Label text="Create your account"
+           style="-fx-font-size: 23px; -fx-font-weight: bold;"/>
+
+    <Label text="Register to manage your IT support requests."
+           style="-fx-text-fill: #64748b;"/>
+
+    <VBox spacing="13"
+          alignment="CENTER"
+          maxWidth="380"
+          style="-fx-background-color: white; -fx-background-radius: 15;">
+
+        <padding>
+            <Insets top="30" right="35" bottom="30" left="35"/>
+        </padding>
+
+        <TextField fx:id="nameField"
+                   promptText="Full name"
+                   prefHeight="42"/>
+
+        <TextField fx:id="emailField"
+                   promptText="Email address"
+                   prefHeight="42"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password (minimum 8 characters)"
+                       prefHeight="42"/>
+
+        <PasswordField fx:id="confirmPasswordField"
+                       promptText="Confirm password"
+                       prefHeight="42"/>
+
+        <Label fx:id="messageLabel"
+               wrapText="true"
+               style="-fx-text-fill: #dc2626;"/>
+
+        <Button text="Create Account"
+                onAction="#register"
+                maxWidth="Infinity"
+                prefHeight="43"
+                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold;"/>
+
+        <Button text="Back to Login"
+                onAction="#backToLogin"
+                maxWidth="Infinity"
+                style="-fx-background-color: transparent; -fx-text-fill: #2563eb;"/>
+
+    </VBox>
+
+</VBox>

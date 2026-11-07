@@ -1,65 +1,178 @@
-# HelpDesk Ticket Management System
+# Smart HelpDesk 🎫
 
-A simple Java desktop application for managing helpdesk tickets, built using Java Swing and MongoDB.
+A desktop-based HelpDesk Ticket Management System developed using **JavaFX, Java 17, Maven, and MongoDB**. The application allows users to report technical issues, track their support tickets, and enables administrators to manage tickets and monitor their status through a dashboard.
 
-## Features
+## 🚀 Features
 
-- Create support tickets
-- View all tickets in a table
-- Search tickets by ID
-- Resolve open tickets
-- Store ticket data persistently in MongoDB
-- Automatically generate ticket IDs
+### 👤 User Module
+- User registration and login.
+- User dashboard.
+- Create support tickets.
+- View personally submitted tickets.
+- Track ticket status.
+- Refresh ticket information.
+- Secure password storage using BCrypt.
+- Logout functionality.
 
-## Technologies Used
+### 🛠️ Admin Module
+- Admin authentication.
+- Admin dashboard with ticket statistics.
+- View all submitted tickets.
+- View total tickets.
+- Monitor open tickets.
+- Monitor in-progress tickets.
+- Monitor resolved tickets.
+- Update ticket status.
+- Logout functionality.
 
-- Java 17
-- Java Swing
-- MongoDB 8.2
-- MongoDB Java Driver
-- Maven
+## 🧰 Tech Stack
 
-## Project Structure
+| Category | Technology |
+|---|---|
+| Programming Language | Java 17 |
+| Desktop UI | JavaFX |
+| UI Design | FXML |
+| Styling | CSS / JavaFX Inline CSS |
+| Database | MongoDB |
+| Database Connectivity | MongoDB Java Sync Driver |
+| Password Security | jBCrypt |
+| Build Tool | Maven |
+| IDE | Visual Studio Code |
+
+## 📂 Project Structure
 
 ```text
 HelpDesk/
+│
 ├── src/
 │   └── main/
-│       └── java/
-│           ├── App.java
-│           ├── Ticket.java
-│           ├── MongoDBConnection.java
-│           ├── TicketRepository.java
-│           └── HelpDeskGUI.java
+│       ├── java/
+│       │   └── com/
+│       │       └── helpdesk/
+│       │           ├── config/
+│       │           │   └── MongoDBConnection.java
+│       │           │
+│       │           ├── controller/
+│       │           │   ├── LoginController.java
+│       │           │   ├── RegisterController.java
+│       │           │   ├── AdminDashboardController.java
+│       │           │   └── UserDashboardController.java
+│       │           │
+│       │           ├── model/
+│       │           │   ├── User.java
+│       │           │   └── Ticket.java
+│       │           │
+│       │           ├── repository/
+│       │           │   ├── UserRepository.java
+│       │           │   └── TicketRepository.java
+│       │           │
+│       │           ├── service/
+│       │           │   └── AuthService.java
+│       │           │
+│       │           └── Main.java
+│       │
+│       └── resources/
+│           └── fxml/
+│               ├── login.fxml
+│               ├── register.fxml
+│               ├── admin-dashboard.fxml
+│               └── user-dashboard.fxml
+│
 ├── pom.xml
+├── .gitignore
 └── README.md
 ```
 
-## Database Configuration
+## ⚙️ Installation and Setup
 
-- Database: `helpdesk_db`
-- Collection: `tickets`
-- Connection: `mongodb://localhost:27017`
+### Prerequisites
 
-Make sure MongoDB Server is running before launching the application.
+Make sure you have installed:
 
-## How to Run
+- Java JDK 17
+- Apache Maven
+- MongoDB Community Server
+- Visual Studio Code (or any Java IDE)
 
-1. Install Java 17, Maven, and MongoDB.
-2. Start MongoDB Server.
-3. Open a terminal in the project folder.
-4. Compile the project:
+### 1. Clone the Repository
 
-   ```bash
-   mvn compile
-   ```
+```bash
+git clone https://github.com/YOUR_USERNAME/Smart-HelpDesk.git
+```
 
-5. Run `HelpDeskGUI` with the compiled classes and MongoDB driver dependencies on the Java classpath.
+### 2. Navigate to the Project Directory
 
-## Learning Outcomes
+```bash
+cd Smart-HelpDesk
+```
 
-- Practiced Java object-oriented programming
-- Built a graphical interface using Swing
-- Connected Java to MongoDB
-- Implemented database CRUD operations
-- Managed project dependencies with Maven
+### 3. Configure MongoDB
+
+Start your MongoDB server.
+
+The application uses the following default configuration:
+
+```text
+Connection: mongodb://localhost:27017
+Database: helpdesk_db
+Collection: tickets
+```
+
+Ensure MongoDB is running before starting the application.
+
+### 4. Build the Project
+
+```bash
+mvn clean install
+```
+
+### 5. Run the Application
+
+```bash
+mvn clean javafx:run
+```
+
+## 🔐 Admin Account Setup
+
+The application includes an admin setup utility.
+
+Run the following command to create the admin account:
+
+```bash
+mvn compile exec:java "-Dexec.mainClass=com.helpdesk.AdminSetup"
+```
+
+Use the admin credentials configured in the setup utility to log in.
+
+**Note:** Regular user registration creates USER accounts. Admin accounts are created separately.
+
+## 🎟️ Ticket Status
+
+Tickets support three statuses:
+
+| Status | Description |
+|---|---|
+| OPEN | Newly submitted ticket |
+| IN_PROGRESS | Ticket currently being handled |
+| RESOLVED | Issue has been resolved |
+
+## 🔒 Security
+
+- Passwords are hashed using BCrypt.
+- User and admin roles are handled separately.
+- Users can view their own tickets.
+- Admins can view and manage all tickets.
+
+## 🎯 Project Objective
+
+The objective of Smart HelpDesk is to provide a simple and organized desktop application for managing support requests, tracking issues, and improving the support ticket management process.
+
+## 👩‍💻 Author
+
+**Vijaya Harshini D**
+
+B.Tech – Artificial Intelligence and Data Science
+
+## 📄 License
+
+This project is developed for educational and academic purposes.
